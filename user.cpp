@@ -145,6 +145,8 @@ void User::on_pushButton_clicked()
             QMessageBox msgBox;
             msgBox.setText("Insufficient balance");
             msgBox.exec();
+            close();
+            return;
         }
         else
         {
@@ -171,12 +173,16 @@ void User::on_pushButton_clicked()
             QMessageBox msgBox;
             msgBox.setText("Invalid account number");
             msgBox.exec();
+            close();
+            return;
         }
         else if(stoi(current_balance) < stoi(tmoney))
         {
             QMessageBox msgBox;
             msgBox.setText("Insufficient balance");
             msgBox.exec();
+            close();
+            return;
         }
         else
         {
