@@ -6,7 +6,7 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <bits/stdc++.h>
-
+#include "sql.h"
 using namespace std;
 Bank::Bank(QWidget *parent)
     : QMainWindow(parent)
@@ -24,12 +24,6 @@ void Bank::on_Loginbutton_clicked()
 {
     string name=ui->usernamebutton->text().toStdString();
     string pass=ui->passwordbutton->text().toStdString();
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("us.dreamcometrue.studio");
-    db.setUserName("vissu");
-    db.setPassword("1Qa2Ws@@");
-    db.setDatabaseName("bank");
-    db.open();
     QSqlQuery query;
     query.exec(("select * from userpass where customerid = '" + name + "';").c_str());
     int cnt = 0;
@@ -78,12 +72,6 @@ void Bank::on_signupbutton_clicked()
 void Bank::on_forgotbutton_clicked()
 {
     string name = ui->usernamebutton->text().toStdString();
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("us.dreamcometrue.studio");
-    db.setUserName("vissu");
-    db.setPassword("1Qa2Ws@@");
-    db.setDatabaseName("bank");
-    db.open();
     QSqlQuery query;
     query.exec(("select * from userdetails where customerid = '" + name + "';").c_str());
     if(!query.next())
@@ -104,16 +92,9 @@ void Bank::on_forgotbutton_clicked()
 
 void Bank::on_Adminloginbutton_clicked()
 {
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("us.dreamcometrue.studio");
-    db.setUserName("vissu");
-    db.setPassword("1Qa2Ws@@");
-    QSqlQuery query;
-    db.setDatabaseName("bank");
-    db.open();
-
     string given_pass=ui->adminpass->text().toStdString();
     string act_pass;
+    QSqlQuery query;
     query.exec("select * from admin;");
     while (query.next()) {
         act_pass = query.value(0).toString().toStdString();

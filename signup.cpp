@@ -5,6 +5,7 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <bits/stdc++.h>
+#include "sql.h"
 using namespace std;
 signup::signup(QWidget *parent) :
     QDialog(parent),
@@ -26,15 +27,7 @@ void signup::on_pushButton_5_clicked()
     string mail = ui->emailbutton->text().toStdString();
     string name = ui->namebutton->text().toStdString();
     string adhar= ui->aadhaarbutton->text().toStdString();
-
-
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("us.dreamcometrue.studio");
-    db.setUserName("vissu");
-    db.setPassword("1Qa2Ws@@");
-    db.setDatabaseName("bank");
     QSqlQuery query;
-    db.open();
     //accessing the lastest account number that is used
     query.exec("select * from latest;");
     string latest_id;

@@ -5,6 +5,7 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <bits/stdc++.h>
+#include "sql.h"
 using namespace std;
 
 Forgot::Forgot(QWidget *parent) :
@@ -29,13 +30,6 @@ void Forgot::on_pushButton_clicked()
     QString g_vid=ui->voteridbutton->text();
     QString g_mail=ui->emailbutton->text();
     QString g_aadhaar=ui->aadhaarbutton->text();
-
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("us.dreamcometrue.studio");
-    db.setUserName("vissu");
-    db.setPassword("1Qa2Ws@@");
-    db.setDatabaseName("bank");
-    db.open();
     QSqlQuery query;
     query.exec(("select * from userdetails where customerid = '" + this->customerid + "';").c_str());
     if(query.next())
@@ -55,6 +49,7 @@ void Forgot::on_pushButton_clicked()
             QMessageBox msgBox;
             msgBox.setText("Wrong Details");
             msgBox.exec();
+            close();
             return;
         }
 

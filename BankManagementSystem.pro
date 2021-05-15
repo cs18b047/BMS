@@ -27,6 +27,7 @@ HEADERS += \
     bank.h \
     forgot.h \
     signup.h \
+    sql.h \
     user.h
 
 FORMS += \

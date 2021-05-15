@@ -5,6 +5,7 @@
 #include <bits/stdc++.h>
 #include <QSqlDatabase>
 #include <QSqlQuery>
+#include "sql.h"
 using namespace std;
 User::User(QWidget *parent) :
     QDialog(parent),
@@ -22,13 +23,6 @@ void User::displayuser(string id)
 {
     this->customerid = id;
     QString phno,mail,vid,name,account_balance;
-
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("us.dreamcometrue.studio");
-    db.setUserName("vissu");
-    db.setPassword("1Qa2Ws@@");
-    db.setDatabaseName("bank");
-    db.open();
     QSqlQuery query;
     query.exec(("select * from userdetails where customerid = '" + this->customerid + "';").c_str());
     if(query.next())
@@ -79,13 +73,7 @@ void User::displayuser(string id)
 
 
 void User::on_pushButton_clicked()
-{   
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("us.dreamcometrue.studio");
-    db.setUserName("vissu");
-    db.setPassword("1Qa2Ws@@");
-    db.setDatabaseName("bank");
-    db.open();
+{
     QSqlQuery query;
     query.exec(("select * from userpass where customerid = '" + this->customerid + "';").c_str());
     QString pass;
@@ -100,6 +88,7 @@ void User::on_pushButton_clicked()
         QMessageBox msgBox;
         msgBox.setText("Wrong password");
         msgBox.exec();
+        close();
         return;
     }
 
@@ -209,12 +198,6 @@ void User::on_pushButton_clicked()
 //function to delete a account
 void User::on_Delete_clicked()
 {
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("us.dreamcometrue.studio");
-    db.setUserName("vissu");
-    db.setPassword("1Qa2Ws@@");
-    db.setDatabaseName("bank");
-    db.open();
     QSqlQuery query;
     query.exec(("select * from userpass where customerid = '" + this->customerid + "';").c_str());
     QString pass;
