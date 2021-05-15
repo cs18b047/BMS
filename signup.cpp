@@ -53,5 +53,6 @@ void signup::on_pushButton_5_clicked()
     QMessageBox msgBox;
     msgBox.setText(latest_id.c_str());
     msgBox.exec();
+    close();
     return;
 }

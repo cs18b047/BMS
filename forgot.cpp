@@ -59,5 +59,6 @@ void Forgot::on_pushButton_clicked()
         }
 
     }
+    close();
     return;
 }

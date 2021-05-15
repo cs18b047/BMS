@@ -133,9 +133,6 @@ void Bank::on_Adminloginbutton_clicked()
         t=OpenAdminInterface();
     }
     show();
-    QMessageBox msgBox;
-    msgBox.setText("Waiting");
-    msgBox.exec();
     return;
 }
 bool Bank::OpenAdminInterface()
