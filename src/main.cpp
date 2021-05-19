@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("us.dreamcometrue.studio");
     db.setUserName("vissu");
-    db.setPassword("1Qa2Ws@@");
+    db.setPassword("xxxxxx");
     db.setDatabaseName("bank");
     db.open();
     QApplication a(argc, argv);
