@@ -7,6 +7,8 @@
 #include <QSqlQuery>
 #include <bits/stdc++.h>
 #include "sql.h"
+#include "md5.h"
+
 using namespace std;
 Bank::Bank(QWidget *parent)
     : QMainWindow(parent)
@@ -40,7 +42,7 @@ void Bank::on_Loginbutton_clicked()
         msgBox.exec();
         return;
     }
-
+    pass = md5(pass);
     if(act_pass != pass)
     {
         QMessageBox msgBox;
@@ -99,7 +101,7 @@ void Bank::on_Adminloginbutton_clicked()
     while (query.next()) {
         act_pass = query.value(0).toString().toStdString();
     }
-
+    given_pass = md5(given_pass);
     if(given_pass != act_pass)
     {
         QMessageBox msgBox;

@@ -7,6 +7,8 @@
 #include <QSqlQuery>
 #include <bits/stdc++.h>
 #include "sql.h"
+#include "md5.h"
+
 using namespace std;
 
 Admin::Admin(QWidget *parent) :

@@ -6,6 +6,8 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include "sql.h"
+#include "md5.h"
+
 using namespace std;
 User::User(QWidget *parent) :
     QDialog(parent),
@@ -76,12 +78,12 @@ void User::on_pushButton_clicked()
 {
     QSqlQuery query;
     query.exec(("select * from userpass where customerid = '" + this->customerid + "';").c_str());
-    QString pass;
+    string pass;
     if(query.next())
     {
-        pass = query.value(1).toString();
+        pass = query.value(1).toString().toStdString();
     }
-    QString given_pass = ui->currentpasswordbutton->text();
+    string given_pass = md5(ui->currentpasswordbutton->text().toStdString());
 
     if(given_pass != pass)
     {
@@ -95,7 +97,7 @@ void User::on_pushButton_clicked()
     //updating password
     if(ui->newpasswordbutton->text() != NULL)
     {
-        string new_pass = ui->newpasswordbutton->text().toStdString();
+        string new_pass = md5(ui->newpasswordbutton->text().toStdString());
         query.exec(("DELETE FROM userpass WHERE customerid = '" + this->customerid + "';").c_str());
         query.exec(("INSERT INTO userpass VALUES ('" + this->customerid + "','" + new_pass + "');").c_str());
     }
@@ -206,12 +208,12 @@ void User::on_Delete_clicked()
 {
     QSqlQuery query;
     query.exec(("select * from userpass where customerid = '" + this->customerid + "';").c_str());
-    QString pass;
+    string pass;
     if(query.next())
     {
-        pass = query.value(1).toString();
+        pass = query.value(1).toString().toStdString();
     }
-    QString given_pass = ui->currentpasswordbutton->text();
+    string given_pass = md5(ui->currentpasswordbutton->text().toStdString());
     if (given_pass != pass)
     {
         QMessageBox msgBox;

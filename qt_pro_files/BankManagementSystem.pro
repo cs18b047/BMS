@@ -26,6 +26,7 @@ HEADERS += \
     admin.h \
     bank.h \
     forgot.h \
+    md5.h \
     signup.h \
     sql.h \
     user.h

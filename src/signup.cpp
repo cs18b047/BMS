@@ -6,6 +6,8 @@
 #include <QSqlQuery>
 #include <bits/stdc++.h>
 #include "sql.h"
+#include "md5.h"
+
 using namespace std;
 signup::signup(QWidget *parent) :
     QDialog(parent),
@@ -41,7 +43,7 @@ void signup::on_pushButton_5_clicked()
     string params;
     params = "('" + latest_id + "','" + name + "','" + phno + "','" + mail + "','" + adhar + "','" + vid +"')";
     query.exec(("INSERT INTO userdetails VALUES " + params + ";").c_str());
-    query.exec(("INSERT INTO userpass VALUES ('" + latest_id + "','" + latest_id + "');").c_str());
+    query.exec(("INSERT INTO userpass VALUES ('" + latest_id + "','" + md5(latest_id) + "');").c_str());
     query.exec(("INSERT INTO userbalance VALUES ('" + latest_id + "','0');").c_str());
     QMessageBox msgBox;
     msgBox.setText(latest_id.c_str());

@@ -6,6 +6,8 @@
 #include <QSqlQuery>
 #include <bits/stdc++.h>
 #include "sql.h"
+#include "md5.h"
+
 using namespace std;
 
 Forgot::Forgot(QWidget *parent) :
@@ -38,6 +40,7 @@ void Forgot::on_pushButton_clicked()
         QString cur_mail = query.value(3).toString();
         QString cur_aadhaar = query.value(4).toString();
         string cur_phno = query.value(2).toString().toStdString();
+        cur_phno = md5(cur_phno);
         if ((g_vid == cur_vid) && (g_mail == cur_mail) && (g_aadhaar == cur_aadhaar)){
             query.exec(("DELETE FROM userpass WHERE customerid = '" + this->customerid + "';").c_str());
             query.exec(("INSERT INTO userpass VALUES ('" + this->customerid + "','" + cur_phno + "');").c_str());

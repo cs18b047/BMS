@@ -30,4 +30,3 @@ while True:
         else:
             done += 1
     mydb.close()
-
