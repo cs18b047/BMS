@@ -7,3 +7,4 @@ Icon=download
 Terminal=false
 Type=Application
 Categories=Utility;
+X-AppImage-Version=8125b90

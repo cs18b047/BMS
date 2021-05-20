@@ -6,17 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>661</width>
-    <height>538</height>
+    <width>746</width>
+    <height>426</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(119, 33, 111);
+selection-color: rgb(0, 0, 0);
+font: 63 11pt &quot;URW Gothic&quot;;</string>
+  </property>
   <widget class="QPushButton" name="pushButton_5">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>310</x>
      <y>330</y>
      <width>101</width>
      <height>31</height>
@@ -29,7 +34,7 @@
   <widget class="QLineEdit" name="lineEdit_2">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>390</x>
      <y>160</y>
      <width>131</width>
      <height>31</height>
@@ -39,57 +44,72 @@
   <widget class="QLineEdit" name="aadhaarbutton">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>390</x>
      <y>280</y>
      <width>131</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid black;</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="Phonenumbutton">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>390</x>
      <y>120</y>
      <width>131</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid black;</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="namebutton">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>390</x>
      <y>240</y>
      <width>131</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid black;</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="voteridbutton">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>390</x>
      <y>160</y>
      <width>131</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid black;</string>
+   </property>
   </widget>
   <widget class="QLineEdit" name="emailbutton">
    <property name="geometry">
     <rect>
-     <x>340</x>
+     <x>390</x>
      <y>200</y>
      <width>131</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid black;</string>
+   </property>
   </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>220</x>
      <y>120</y>
      <width>123</width>
      <height>191</height>
@@ -136,11 +156,14 @@
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>210</x>
+     <x>230</x>
      <y>70</y>
-     <width>221</width>
+     <width>321</width>
      <height>32</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 63 13pt &quot;URW Gothic&quot;;</string>
    </property>
    <property name="text">
     <string>Please enter your details</string>
