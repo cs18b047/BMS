@@ -1,11 +1,17 @@
 # Usage
 
 Download the latest release [here](https://github.com/cs18b047/BMS/releases).
+
 Run the app-image.
+
 Create an account by clicking signup and get a customer identification number.
+
 Login with your identification and password.For the very first time, your password will be same as that of your identification.
+
 Inside your login screen, you can see and modify your account details, password, make and view transactions, etc.
+
 You will be intimated with an email and text for every transaction.
+
 If you forget your password, use the forgot password option and answer the required questions properly.Your password will be reset to your phone number.Please change it immediately by logging in.
 
 # For Contributors
